@@ -11,7 +11,6 @@ async function getBBSAllData() {
 
 export default async function Home() {
   const bbsAllData = await getBBSAllData();
-  console.log(bbsAllData);
   return (
     <main className="grid lg:grid-cols-3 px-3 py-4 gap-4">
       <CardList bbsAllData={bbsAllData} />

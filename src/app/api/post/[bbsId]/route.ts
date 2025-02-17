@@ -2,7 +2,10 @@ import { NextResponse } from "next/server";
 import { prisma } from "../../../../lib/prismaClient";
 
 export async function GET(
-  // req: Request,
+  req: Request,
+  //上記のreqは使用されていないため、vercelのデプロイでエラーとなるが、
+  // 消すと、npm run devしたときに、投稿の詳細ページがエラーで表示されなくなる
+
   { params }: { params: { bbsId: string } }
 ) {
   const { bbsId } = params;
@@ -24,19 +27,3 @@ export async function GET(
     return new NextResponse("Internal server error", { status: 500 }); // サーバーエラー
   }
 }
-
-// import { NextResponse } from "next/server";
-// import { prisma } from "../../../../lib/prismaClient";
-
-// export async function GET(
-//   req: Request,
-//   { params }: { params: Promise<{ bbsId: string }> }
-// ) {
-//   const { bbsId } = await params;
-//   const bbsDetailData = await prisma.post.findUnique({
-//     where: {
-//       id: parseInt(bbsId),
-//     },
-//   });
-//   return NextResponse.json(bbsDetailData);
-// }
