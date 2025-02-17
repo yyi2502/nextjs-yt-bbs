@@ -1,5 +1,4 @@
 "use client";
-import { postBBS } from "@/actions/postBBSAction";
 import { Button } from "@/components/ui/button";
 import {
   Form,

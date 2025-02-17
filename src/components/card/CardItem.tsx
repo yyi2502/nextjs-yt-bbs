@@ -14,7 +14,7 @@ type BBSDataProps = {
 };
 
 const CardItem = ({ bbsData }: BBSDataProps) => {
-  const { id, title, content, username, createdAt } = bbsData;
+  const { id, title, content, username } = bbsData;
   return (
     <Card>
       <CardHeader>

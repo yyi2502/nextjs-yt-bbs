@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { prisma } from "../../../../lib/prismaClient";
 
 export async function GET(
-  req: Request,
+  // req: Request,
   { params }: { params: { bbsId: string } }
 ) {
   const { bbsId } = params;
