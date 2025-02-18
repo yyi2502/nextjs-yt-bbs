@@ -1,10 +1,9 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "../../../../lib/prismaClient";
 
 export async function GET(
-  req: Request,
-  //上記のreqは使用されていないため、vercelのデプロイでエラーとなるが、
-  // 消すと、npm run devしたときに、投稿の詳細ページがエラーで表示されなくなる
+  req: NextRequest,
+  // Request型をNextRequestに変更
 
   { params }: { params: { bbsId: string } }
 ) {
